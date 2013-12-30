@@ -1,0 +1,4 @@
+.post{class: "post-#{post.category.parameterize}"}
+  %h3= link_to(post.title, post.url || '#')
+  %p= post.body
+  .star-rating= star_rating(post)

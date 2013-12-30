@@ -11,7 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230190329) do
+ActiveRecord::Schema.define(version: 20131230193540) do
+
+  create_table "posts", force: true do |t|
+    t.integer  "stream_id"
+    t.string   "category"
+    t.string   "title"
+    t.string   "slug"
+    t.string   "url"
+    t.text     "body"
+    t.integer  "rating"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "posts", ["category"], name: "index_posts_on_category"
+  add_index "posts", ["created_at"], name: "index_posts_on_created_at"
+  add_index "posts", ["slug"], name: "index_posts_on_slug", unique: true
+  add_index "posts", ["stream_id"], name: "index_posts_on_stream_id"
 
   create_table "streams", force: true do |t|
     t.integer  "display_order"
