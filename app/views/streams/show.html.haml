@@ -1,0 +1,9 @@
+.row
+  .span3
+    = render partial: 'stream', object: @stream
+  .span9
+    %h2 Other streams
+    %ul
+      %li= link_to("All", streams_path)
+      - @other_streams.each do |stream|
+        %li= link_to(stream.name, stream)

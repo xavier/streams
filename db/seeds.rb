@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+["Read", "Listened", "Watched", "Experienced"].each_with_index do |name, idx|
+  Stream.setup!(idx.succ, name)
+end
