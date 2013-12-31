@@ -32,4 +32,8 @@ module PostsHelper
     link_to("#", post_path(post), class: "permalink")
   end
 
+  def post_date(post)
+    post.date.to_formatted_s(:long)
+  end
+
 end

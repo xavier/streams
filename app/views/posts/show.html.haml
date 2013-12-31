@@ -1,4 +1,4 @@
 - content_for :title do
   = page_title(@post.title)
 = render partial: 'post', object: @post
-%p Posted in #{link_to(@post.stream.name, stream_path(@post.stream))}
+%p.meta Posted on #{post_date(@post)} in #{link_to(@post.stream.name, stream_path(@post.stream))}
