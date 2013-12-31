@@ -1,0 +1,16 @@
+read:
+  display_order: 1
+  name: Read
+  slug: read
+listened:
+  display_order: 2
+  name: Listened
+  slug: listened
+watched:
+  display_order: 3
+  name: Watched
+  slug: watched
+experienced:
+  display_order: 4
+  name: Experienced
+  slug: experienced

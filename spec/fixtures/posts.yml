@@ -1,0 +1,27 @@
+book1:
+  stream: read
+  category: Book
+  title: Clojure Programming
+  slug: clojure-programming-80f91567
+  url: http://shop.oreilly.com/product/0636920013754.do
+  body: Convoluted examples
+  rating: 6
+  date: 2014-01-01
+book2:
+  stream: read
+  category: Book
+  title: Understanding Computation
+  slug: understanding-computation-76d03b2a
+  url: http://shop.oreilly.com/product/0636920025481.do
+  body: A veyr fun bottom-up approach to computation
+  rating: 8
+  date: 2013-12-10
+movie1:
+  stream: watched
+  category: Movie
+  title: Gravity
+  slug: gravity-80f91567
+  url: http://shop.oreilly.com/product/0636920013754.do
+  body: Convoluted examples
+  rating: 6
+  date: 2014-01-01
