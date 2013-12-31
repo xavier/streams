@@ -1,5 +1,7 @@
 - content_for :title do
   = page_title(@stream.name)
+- content_for :feeds_discovery do
+  = auto_discovery_link_tag(:atom, stream_path(@stream, format: :atom), title: "#{@stream.name} Stream")
 .row
   .col-md-9.stream
     %h2= link_to(@stream.name, @stream)

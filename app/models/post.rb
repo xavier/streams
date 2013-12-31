@@ -14,6 +14,7 @@ class Post < ActiveRecord::Base
   validates :rating, numericality: {integer_only: true}, inclusion: {in: 0..10}
 
   scope :in_stream, ->(stream) { where(stream_id: stream) }
+  scope :published, -> { where('date <= ?', Date.today) }
   scope :in_reverse_chronological_order, -> { order('date DESC') }
 
   def to_param
