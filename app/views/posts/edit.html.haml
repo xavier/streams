@@ -1,3 +1,5 @@
+- content_for :title do
+  = page_title("Edit Post '#{@post.title}'")
 %h2 Edit Post '#{@post.title}'
 
 = form_for @post, html: {role: 'form'} do |form|

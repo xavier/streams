@@ -1,3 +1,5 @@
+- content_for :title do
+  = page_title(@stream.name)
 .row
   .col-md-9.stream
     %h2= link_to(@stream.name, @stream)
