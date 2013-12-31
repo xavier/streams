@@ -1,3 +1,12 @@
+future_book:
+  stream: read
+  category: Book
+  title: Book in the Future
+  slug: book-in-the-future-f9671580
+  url:
+  body: Should not appear in streams
+  rating: 10
+  date: <%= Date.today + 10 %>
 book1:
   stream: read
   category: Book
@@ -24,4 +33,4 @@ movie1:
   url: http://shop.oreilly.com/product/0636920013754.do
   body: Convoluted examples
   rating: 6
-  date: 2014-01-01
+  date: 2013-12-01

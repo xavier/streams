@@ -17,5 +17,9 @@ describe "The homepage" do
 
   end
 
+  it "does not show posts with a date in the future" do
+    expect(page).not_to have_content("Book in the Future")
+  end
+
 end
 

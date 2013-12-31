@@ -17,7 +17,7 @@ class StreamsController < ApplicationController
     respond_to do |format|
       format.html do
         @other_streams = Stream.others(@stream).list
-        @stream_posts_by_year = @stream.posts.in_reverse_chronological_order.group_by { |post| post.date.year }.to_a
+        @stream_posts_by_year = @stream.posts.published.in_reverse_chronological_order.group_by { |post| post.date.year }.to_a
       end
       format.atom do
         @feed = FeedService.stream_feed(@stream)

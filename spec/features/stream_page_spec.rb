@@ -17,6 +17,10 @@ describe "A stream page" do
     expect(page).not_to have_content("Gravity")
   end
 
+  it "does not show posts with a date in the future" do
+    expect(page).not_to have_content("Book in the Future")
+  end
+
   it "shows a list of links to the other available streams" do
     within ".other-streams" do
       expect(page).to have_content("Watched")
