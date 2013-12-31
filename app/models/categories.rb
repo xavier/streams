@@ -1,19 +1,21 @@
 module Categories
 
   MAP = {
-    "Article" => "Read",
-    "Book"    => "Read",
-    "Movie"   => "Watched",
-    "Series"  => "Watched",
-    "Video"   => "Watched",
-    "Single"  => "Listened",
-    "EP"      => "Listened",
-    "Album"   => "Listened",
-    "Mix"     => "Listened",
-    "Podcast" => "Listened",
-    "Game"    => "Experienced",
-    "Concert" => "Experienced",
-    "Gadget"  => "Experienced",
+    "Article"  => "Read",
+    "Book"     => "Read",
+    "Movie"    => "Watched",
+    "Series"   => "Watched",
+    "Video"    => "Watched",
+    "Single"   => "Listened",
+    "EP"       => "Listened",
+    "Album"    => "Listened",
+    "Mix"      => "Listened",
+    "Podcast"  => "Listened",
+    "Game"     => "Experienced",
+    "Concert"  => "Experienced",
+    "Gadget"   => "Experienced",
+    "Location" => "Experienced",
+    "Food"     => "Experienced",
   }
 
   def self.list

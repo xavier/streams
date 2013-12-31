@@ -1,3 +1,43 @@
 // Place all the styles related to the Streams controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.stream {
+  h2 {
+    a {
+      color: #000;
+    }
+
+    a:hover {
+      background-color: #000;
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  .post {
+
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: 1em;
+
+    h3 {
+
+      a {
+        color: #000;
+      }
+
+      a:hover {
+        background-color: #000;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    abbr[title] {
+      border-bottom: none;
+    }
+
+  }
+
+}

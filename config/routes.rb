@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :streams
+  resources :posts
 
   root 'streams#index'
 

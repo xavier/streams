@@ -17,7 +17,7 @@ end
   {category: "Movie", title: "The Dirties", body: "Gus Van Sant meets 4chan", rating: 7},
   {category: "Game", title: "Limbo", body: "Mentally draining but fantastically eerie and gloomy", rating: 8},
   {category: "Game", title: "Shadowrun Returns", body: "Deliciously cyberpunk, despite the fantasy crap", rating: 7},
-  {category: "EP", title: "Burial", body: "Back at the top of his game, arguably even better than Untrue", rating: 9},
+  {category: "EP", title: "Rival Dealer", body: "Burial back at the top of his game, arguably even better than Untrue", rating: 9},
   {category: "Album", title: "7 Days of Funk", body: "Snoopzilla & Dâm Funk in a exercise of style and nostalgia", rating: 8},
   {category: "Game", title: "F-Sim Space Shuttle", body: "A subtle balance between the zen-like experience of gliding and the adrenalin of a realistic landing", rating: 9, url: "http://f-sim.com"},
   {category: "Album", title: "Spaces", body: "Nils Frahm at the top of his game", rating: 10},

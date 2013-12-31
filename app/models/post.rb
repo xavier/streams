@@ -14,8 +14,16 @@ class Post < ActiveRecord::Base
   scope :in_stream, ->(stream) { where(stream_id: stream) }
   scope :in_reverse_chronological_order, -> { order('created_at DESC') }
 
+  def to_param
+    slug
+  end
+
+  def self.find_by_slug!(slug)
+    where(slug: slug).first!
+  end
+
   def assign_slug
-    self.slug = "#{SecureRandom.hex(8)}-#{self.title.parameterize}"
+    self.slug = "#{self.title.parameterize}-#{SecureRandom.hex(4)}"
   end
 
   def self.write!(attributes)

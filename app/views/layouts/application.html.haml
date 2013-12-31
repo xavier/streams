@@ -20,7 +20,19 @@
 
   %body
     .container
+      .row
+        .col-md-4
+          %h1 defrang.com
+        .col-md-8
+          %p
+            I am Xavier Defrang, software craftsman at #{link_to('BigUp', 'http://bigup.be')} where I'm designing and building web and mobile apps in Ruby, JavaScript & Objective-C. Currently interested in Go and Clojure as well.
+
+          %p I am also a serious music enthusiast and a nerd in general.
+
+          %p
+            You can <a href="http://twitter.com/xavierdefrang">follow me on Twitter</a> and <a href="http://github.com/xavier">check my code on GitHub</a>.
+
       = yield
 
       %footer
-        %p &copy; Company #{Date.today.year}
+        %p &copy; Xavier Defrang #{Date.today.year} • Powered by #{link_to("Streams", "http://github.com/xavier/streams")}
