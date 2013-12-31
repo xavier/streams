@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20131230193540) do
     t.string   "url"
     t.text     "body"
     t.integer  "rating"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

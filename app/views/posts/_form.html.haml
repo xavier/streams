@@ -1,0 +1,20 @@
+.form-group
+  = form.label :date
+  = form.date_field :date, class: 'form-control'
+.form-group
+  = form.label :category
+  = form.select :category, Categories.list, {}, class: 'form-control'
+.form-group
+  = form.label :title
+  = form.text_field :title, class: 'form-control'
+.form-group
+  = form.label :body
+  = form.text_area :body, class: 'form-control'
+.form-group
+  = form.label :url, 'URL'
+  = form.text_field :url, class: 'form-control'
+.form-group
+  = form.label :rating
+  = form.number_field :rating, class: 'form-control'
+
+= form.submit 'Save Post', class: 'btn btn-success'

@@ -1,3 +1,3 @@
 .stream.col-md-3
   %h2= link_to(stream.name, stream)
-  = render partial: 'post', collection: stream.posts.in_reverse_chronological_order
+  = render partial: 'posts/post', collection: stream.posts.in_reverse_chronological_order

@@ -7,12 +7,14 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :slug,  uniqueness: true
 
+  validates :date,  presence: true
+
   validates :category, presence: true, inclusion: {in: Categories.list}
 
   validates :rating, numericality: {integer_only: true}, inclusion: {in: 0..10}
 
   scope :in_stream, ->(stream) { where(stream_id: stream) }
-  scope :in_reverse_chronological_order, -> { order('created_at DESC') }
+  scope :in_reverse_chronological_order, -> { order('date DESC') }
 
   def to_param
     slug
@@ -26,12 +28,16 @@ class Post < ActiveRecord::Base
     self.slug = "#{self.title.parameterize}-#{SecureRandom.hex(4)}"
   end
 
-  def self.write!(attributes)
-    post = new(attributes)
-    post.assign_slug
-    post.stream = Stream.find_by!(name: Categories.stream_name_for(post.category))
-    post.save!
-    post
+  def create(post_attributes)
+    self.attributes = post_attributes
+    self.assign_slug
+    self.stream = Stream.find_by!(name: Categories.stream_name_for(self.category)) if self.category
+    self.date ||= Date.today
+    self.save
+  end
+
+  def modify(post_attributes)
+    self.update_attributes(post_attributes)
   end
 
 end

@@ -1,7 +1,13 @@
 .row
-  .span3
-    = render partial: 'stream', object: @stream
-  .span9
+  .col-md-9.stream
+    %h2= link_to(@stream.name, @stream)
+    - @stream_posts_by_year.in_groups_of(3, false).each do |row|
+      .row
+        - row.each do |year, posts|
+          .col-md-4
+            %h2.year= year
+            = render partial: 'posts/post', collection: posts
+  .col-md-3
     %h2 Other streams
     %ul
       %li= link_to("All", streams_path)

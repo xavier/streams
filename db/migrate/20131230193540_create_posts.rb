@@ -8,7 +8,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :url
       t.text :body
       t.integer :rating
-
+      t.date :date
       t.timestamps
     end
     add_index :posts, :slug, unique: true

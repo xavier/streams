@@ -1,0 +1,4 @@
+%h2 Edit Post '#{@post.title}'
+
+= form_for @post, html: {role: 'form'} do |form|
+  = render partial: 'form', object: form
