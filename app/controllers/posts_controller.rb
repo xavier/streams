@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+  before_filter :require_authentication, except: [:show]
   before_filter :load_post
 
   def new
