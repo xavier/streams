@@ -19,7 +19,7 @@ module PostsHelper
     "Game"     => :send,
     "Concert"  => :music,
     "Gadget"   => :phone,
-    "Location" => "map-marker",
+    "Place"    => "map-marker",
     "Food"     => :cutlery,
   }
 

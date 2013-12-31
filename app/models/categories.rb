@@ -14,7 +14,7 @@ module Categories
     "Game"     => "Experienced",
     "Concert"  => "Experienced",
     "Gadget"   => "Experienced",
-    "Location" => "Experienced",
+    "Place"    => "Experienced",
     "Food"     => "Experienced",
   }
 
