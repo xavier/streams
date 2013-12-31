@@ -1,3 +1,5 @@
 .col-md-3.stream{class: "stream-#{stream.slug}"}
   %h2= link_to(stream.name, stream)
-  = render partial: 'posts/post', collection: stream.posts.in_reverse_chronological_order
+  = render partial: 'posts/post', collection: stream.posts
+  - if stream.has_more?
+    %p.more= link_to("#{stream.count_more} more", stream)

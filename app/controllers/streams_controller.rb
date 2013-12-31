@@ -3,7 +3,7 @@ class StreamsController < ApplicationController
   def index
     respond_to do |format|
       format.html do
-        @streams = Stream.list
+        @homepage = Homepage.new(Stream.list)
       end
       format.atom do
         @feed = FeedService.main_feed
