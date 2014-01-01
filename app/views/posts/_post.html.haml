@@ -8,5 +8,6 @@
   - if user_signed_in?
     .edit-tools
       = link_to(glyphicon(:pencil), edit_post_path(post))
+      = link_to(glyphicon(:share), tweet_post_path(post), :method => :post, data: {confirm: "Tweet?"})
       = link_to(glyphicon(:trash), post_path(post), :method => :delete, data: {confirm: "Are you sure?"})
-  .star-rating= post_rating(post)
+  .star-rating= post_rating_tag(post)

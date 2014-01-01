@@ -12,6 +12,7 @@ describe "Authentication requirements" do
     [:get,    "/posts/clojure-programming-80f91567/edit"],
     [:post,   "/posts/clojure-programming-80f91567", {_method: 'patch', post: {title: "foo"}}],
     [:delete, "/posts/clojure-programming-80f91567"],
+    [:post,   "/posts/clojure-programming-80f91567/tweet"],
   ].each do |verb, unauthorized_url, params|
 
     it "prevents unauthorized #{verb.to_s.upcase} #{unauthorized_url}" do

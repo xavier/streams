@@ -4,7 +4,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :streams
-  resources :posts
+  resources :posts do
+    member do
+      post :tweet
+    end
+  end
+
+  get '/p/:id' => 'posts#redirect', as: :shortened_post
 
   root 'streams#index'
 

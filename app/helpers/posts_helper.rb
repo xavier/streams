@@ -2,7 +2,11 @@ module PostsHelper
 
   def post_rating(post)
     r = post.rating / 2
-    content_tag(:abbr, ('●' * r) + ('◦' * (5-r)), title: "#{post.rating}/10")
+    ('●' * r) + ('◦' * (5-r))
+  end
+
+  def post_rating_tag(post)
+    content_tag(:abbr, post_rating(post), title: "#{post.rating}/10")
   end
 
   POST_CATEGORIES_ICONS = {

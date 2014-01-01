@@ -62,3 +62,5 @@ gem 'rails_12factor', group: :production
 gem 'pg', group: :production
 
 gem 'devise'
+gem 'settingslogic'
+gem 'twitter', path: "/Users/xavier/.rbenv/versions/2.1.0/lib/ruby/gems/2.1.0/gems/twitter-5.4.1"

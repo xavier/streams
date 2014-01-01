@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
-  before_filter :require_authentication, except: [:show]
-  before_filter :load_post
+  before_filter :require_authentication, except: [:show, :redirect]
+  before_filter :load_post, except: [:redirect]
 
   def new
     @post = Post.new(date: Date.today)
@@ -33,6 +33,19 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to stream_path(@post.stream), notice: "Post '#{@post.title}' has been deleted"
+  end
+
+  def redirect
+    @post = Post.published.find(params[:id])
+    redirect_to post_path(@post)
+  end
+
+  def tweet
+    tweet_contents = Tweet.new(@post).to_s
+    TwitterService.post(tweet_contents)
+    redirect_to post_path(@post), notice: "Tweet '#{tweet_contents}' has been posted"
+  rescue Twitter::Error => error
+    redirect_to post_path(@post), alert: "Failed to tweet '#{tweet_contents}' (#{error.message})"
   end
 
   private

@@ -1,0 +1,14 @@
+# config/application.yml
+defaults: &defaults
+
+development:
+  <<: *defaults
+  default_host: "localhost:300"
+
+test:
+  <<: *defaults
+  default_host: "streams.example.com"
+
+production:
+  <<: *defaults
+  default_host: "streams.defrang.com"
