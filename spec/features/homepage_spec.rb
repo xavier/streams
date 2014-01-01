@@ -5,20 +5,28 @@ describe "The homepage" do
 
   fixtures :streams, :posts
 
-  before do
-    visit "/"
-  end
+  context "when not signed in" do
 
-  [:read, :listened, :watched, :experienced].each do |stream_slug|
-
-    it "shows the '#{stream_slug}' stream" do
-      expect(page).to have_css(".stream.stream-#{stream_slug}")
+    before do
+      visit "/"
     end
 
-  end
+    [:read, :listened, :watched, :experienced].each do |stream_slug|
 
-  it "does not show posts with a date in the future" do
-    expect(page).not_to have_content("Book in the Future")
+      it "shows the '#{stream_slug}' stream" do
+        expect(page).to have_css(".stream.stream-#{stream_slug}")
+      end
+
+    end
+
+    it "does not show posts with a date in the future" do
+      expect(page).not_to have_content("Book in the Future")
+    end
+
+    it "does not allow the edition of posts" do
+      expect(page).not_to have_css(".edit-tools")
+    end
+
   end
 
 end

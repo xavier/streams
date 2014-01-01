@@ -34,4 +34,16 @@
     text-decoration: none;
   }
 
+  .edit-tools {
+    float: right;
+
+    a {
+      color: #999;
+    }
+
+    a:hover {
+      color: #000;
+    }
+  }
+
 }
