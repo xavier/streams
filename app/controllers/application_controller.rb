@@ -5,16 +5,8 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def user_authenticated?
-    false
-  end
-
   def require_authentication
-    forbid_access and return false unless user_authenticated?
-  end
-
-  def forbid_access
-    render text: "Forbidden", status: :forbidden
+    authenticate_user!
   end
 
 end

@@ -22,6 +22,10 @@
 
   %body
     .container
+      - if flash.any?
+        .flashes
+          - flash.each do |level, message|
+            .alert{class: "alert-#{level}"}= message
       .row
         .col-md-9.colophon
           %h1 #{link_to("Xavier Defrang", "/")}
@@ -34,4 +38,11 @@
       = yield
 
       %footer
-        %p &copy; Xavier Defrang 2000—#{Date.today.year} • Powered by #{link_to("Streams", "http://github.com/xavier/streams")}
+        %p
+          &copy; Xavier Defrang 2000—#{Date.today.year} • Powered by #{link_to("Streams", "http://github.com/xavier/streams")} •
+          - if user_signed_in?
+            Signed in as <span class="current-user">#{current_user.email}</span>
+            •
+            = link_to("Sign out", destroy_user_session_path, :method => :delete)
+          - else
+            = link_to("Sign in", new_user_session_path)

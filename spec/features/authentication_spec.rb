@@ -16,11 +16,12 @@ describe "Authentication requirements" do
 
     it "prevents unauthorized #{verb.to_s.upcase} #{unauthorized_url}" do
       page.driver.send(verb, unauthorized_url, params)
-      expect(page.status_code).to eq(403)
+      expect(page.status_code).to eq(302)
+      page.visit(page.response_headers["Location"])
+      expect(page.current_path).to eq(new_user_session_path)
     end
 
   end
-
 
 end
 
