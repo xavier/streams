@@ -31,6 +31,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
     redirect_to stream_path(@post.stream), notice: "Post '#{@post.title}' has been deleted"
   end
 
