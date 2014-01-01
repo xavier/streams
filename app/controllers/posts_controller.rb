@@ -48,6 +48,10 @@ class PostsController < ApplicationController
     redirect_to post_path(@post), alert: "Failed to tweet '#{tweet_contents}' (#{error.message})"
   end
 
+  def drafts
+    @posts = Post.drafts.in_reverse_chronological_order
+  end
+
   private
 
   def load_post

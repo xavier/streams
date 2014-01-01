@@ -1,0 +1,9 @@
+- content_for :title do
+  Drafts (#{@page.drafts_count})
+.row
+  .col-md-3
+    %h2 Drafts
+    - if @posts.any?
+      = render partial: 'posts/post', collection: @posts
+    - else
+      %p No drafts, #{link_to('start writing now', new_post_path)}

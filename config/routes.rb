@@ -5,6 +5,9 @@ Rails.application.routes.draw do
 
   resources :streams
   resources :posts do
+    collection do
+      get :drafts
+    end
     member do
       post :tweet
     end

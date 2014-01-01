@@ -15,7 +15,12 @@ class Post < ActiveRecord::Base
 
   scope :in_stream, ->(stream) { where(stream_id: stream) }
   scope :published, -> { where('date <= ?', Date.today) }
+  scope :drafts, -> { where('date > ?', Date.today) }
   scope :in_reverse_chronological_order, -> { order('date DESC') }
+
+  def draft?
+    self.date > Date.today
+  end
 
   def to_param
     slug

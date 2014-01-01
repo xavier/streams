@@ -33,7 +33,10 @@
           %p
             You can <a href="http://twitter.com/xavierdefrang">follow me on Twitter</a> and <a href="http://github.com/xavier">check my code on GitHub</a>.
           - if user_signed_in?
-            %p= link_to(glyphicon(:pencil), new_post_path)
+            %p.edit-tools
+              = link_to(glyphicon(:pencil), new_post_path)
+              |
+              = link_to(pluralize(@page.drafts_count, 'draft'), drafts_posts_path)
         .col-md-3
           = image_tag("glass.png")
 
