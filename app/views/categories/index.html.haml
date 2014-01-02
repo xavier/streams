@@ -1,0 +1,11 @@
+- content_for :title do
+  = page_title('Categories')
+%h2 Categories
+.categories
+  - @categories.in_groups_of(6, false).each do |row|
+    .row
+      - row.each do |category|
+        .col-md-2
+          %h3
+            = link_to(category_icon(category), category_path(category), class: 'category')
+            = link_to(category, category_path(category), class: 'name')

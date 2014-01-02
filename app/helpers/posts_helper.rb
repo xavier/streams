@@ -9,27 +9,8 @@ module PostsHelper
     content_tag(:abbr, post_rating(post), title: "#{post.rating}/10")
   end
 
-  POST_CATEGORIES_ICONS = {
-    "Article"  => :file,
-    "Book"     => :book,
-    "Movie"    => :film,
-    "Series"   => :film,
-    "Video"    => :video,
-    "Single"   => :music,
-    "EP"       => :music,
-    "Album"    => :music,
-    "Mix"      => :headphones,
-    "Podcast"  => :headphones,
-    "Game"     => :send,
-    "Concert"  => :music,
-    "Gadget"   => :phone,
-    "Place"    => "map-marker",
-    "Food"     => :cutlery,
-  }
-
   def post_category(post)
-    icon_name = POST_CATEGORIES_ICONS[post.category]
-    glyphicon(icon_name) if icon_name
+    category_icon(post.category)
   end
 
   def post_permalink(post)

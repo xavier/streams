@@ -1,0 +1,32 @@
+// Place all the styles related to the Categories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.category {
+
+  color: #999;
+
+  &:hover {
+    color: #333;
+  }
+}
+
+.category-archive {
+  h2 {
+    small {
+      font-size: 100%;
+      color: #999;
+    }
+  }
+
+}
+
+.categories {
+
+  a.name:hover {
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+  }
+
+}

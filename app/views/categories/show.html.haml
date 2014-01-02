@@ -1,0 +1,22 @@
+- content_for :title do
+  = page_title(@category_archive.category_name)
+.row
+  .col-md-9.category-archive
+    %h2
+      %small Category:
+      = @category_archive.category_name
+    - if @category_archive.posts_by_year.any?
+      - @category_archive.posts_by_year.in_groups_of(3, false).each do |row|
+        .row
+          - row.each do |year, posts|
+            .col-md-4
+              %h2.year= year
+              = render partial: 'posts/post', collection: posts
+    - else
+      %p This category has no post yet.
+  .col-md-3.other-categories
+    %h2 Other Categories
+    %ul
+      %li= link_to("All", categories_path)
+      - @category_archive.other_categories.each do |category|
+        %li= link_to(category, category_path(category))

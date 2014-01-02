@@ -10,15 +10,20 @@
 
   h3 {
 
-    a {
+    a.title {
       color: #000;
     }
 
-    a:hover {
+    a.title:hover {
       background-color: #000;
       color: #fff;
       text-decoration: none;
     }
+
+    a.category {
+      font-size: 65%;
+    }
+
   }
 
   abbr[title] {
