@@ -37,5 +37,23 @@ describe "Atom feeds" do
 
   end
 
+  describe "category feed" do
+
+    let(:category) { "Book" }
+
+    let(:feed) do
+      visit category_path(category, format: 'atom')
+      Feedzirra::Feed.parse(page.body)
+    end
+
+    it "has the stream name in the title" do
+      expect(feed.title).to include(category)
+    end
+
+    it "has entries" do
+      expect(feed.entries).not_to be_empty
+    end
+
+  end
 end
 

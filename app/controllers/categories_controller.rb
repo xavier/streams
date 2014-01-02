@@ -5,7 +5,15 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category_archive = CategoryArchive.new(params[:id])
+    respond_to do |format|
+      format.html do
+        @category_archive = CategoryArchive.new(params[:id])
+      end
+      format.atom do
+        @feed = FeedService.category_feed(params[:id])
+        render 'streams/feed'
+      end
+    end
   end
 
 end

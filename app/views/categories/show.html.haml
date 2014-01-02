@@ -1,5 +1,7 @@
 - content_for :title do
   = page_title(@category_archive.category_name)
+- content_for :feeds_discovery do
+  = auto_discovery_link_tag(:atom, category_path(@category_archive.category, format: :atom), title: "Category: #{@category_archive.category_name}")
 .row
   .col-md-9.category-archive
     %h2

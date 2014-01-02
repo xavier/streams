@@ -12,6 +12,10 @@ class FeedService
     Feed.new(feed_title(stream.name), posts_in_feed(Post.in_stream(stream), limit))
   end
 
+  def self.category_feed(category, limit = DEFAULT_LIMIT)
+    Feed.new(feed_title(category), posts_in_feed(Post.in_category(category), limit))
+  end
+
   private
 
   def self.feed_title(title)
