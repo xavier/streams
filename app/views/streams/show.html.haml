@@ -5,7 +5,7 @@
 .row
   .col-md-9.stream
     %h2= link_to(@stream.name, @stream)
-    - @stream_posts_by_year.in_groups_of(3, false).each do |row|
+    - @stream_archive.posts_by_year.in_groups_of(3, false).each do |row|
       .row
         - row.each do |year, posts|
           .col-md-4
@@ -15,5 +15,5 @@
     %h2 Other streams
     %ul
       %li= link_to("All", streams_path)
-      - @other_streams.each do |stream|
+      - @stream_archive.other_streams.each do |stream|
         %li= link_to(stream.name, stream)
