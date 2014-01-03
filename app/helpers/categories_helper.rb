@@ -5,7 +5,7 @@ module CategoriesHelper
     "Book"     => :book,
     "Movie"    => :film,
     "Series"   => :film,
-    "Video"    => :video,
+    "Video"    => :film,
     "Single"   => :music,
     "EP"       => :music,
     "Album"    => :music,
