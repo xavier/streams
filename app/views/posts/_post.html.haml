@@ -1,4 +1,4 @@
-.post{class: "post-#{post.category.parameterize}", id: dom_id(post)}
+.post{class: "post-#{post.category.slug}", id: dom_id(post)}
   %h3
     = link_to(post_category(post), category_path(post.category), class: 'category')
     = link_to(post.title, post.url || '#', class: 'title')

@@ -13,7 +13,7 @@ class FeedService
   end
 
   def self.category_feed(category, limit = DEFAULT_LIMIT)
-    Feed.new(feed_title(category), posts_in_feed(Post.in_category(category), limit))
+    Feed.new(feed_title(category.name), posts_in_feed(Post.in_category(category), limit))
   end
 
   private

@@ -39,7 +39,7 @@ describe "Atom feeds" do
 
   describe "category feed" do
 
-    let(:category) { "Book" }
+    let(:category) { Category.new("Book") }
 
     let(:feed) do
       visit category_path(category, format: 'atom')
@@ -47,7 +47,7 @@ describe "Atom feeds" do
     end
 
     it "has the stream name in the title" do
-      expect(feed.title).to include(category)
+      expect(feed.title).to include(category.name)
     end
 
     it "has entries" do

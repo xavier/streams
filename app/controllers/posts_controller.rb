@@ -61,7 +61,7 @@ class PostsController < ApplicationController
   def post_params
     params.
       require(:post).
-      permit(:category, :title, :slug, :url, :body, :rating, :date)
+      permit(:category_name, :title, :slug, :url, :body, :rating, :date)
   end
 
 end

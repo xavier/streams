@@ -19,7 +19,7 @@ module CategoriesHelper
   }
 
   def category_icon(category)
-    icon_name = CATEGORIES_ICONS[category]
+    icon_name = CATEGORIES_ICONS[category.name]
     glyphicon(icon_name) if icon_name
   end
 

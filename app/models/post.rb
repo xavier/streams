@@ -9,6 +9,8 @@ class Post < ActiveRecord::Base
 
   validates :date,  presence: true
 
+  serialize :category, Category::Serializer.new
+
   validates :category, presence: true, inclusion: {in: Categories.list}
 
   validates :rating, numericality: {integer_only: true}, inclusion: {in: 0..10}
@@ -17,7 +19,7 @@ class Post < ActiveRecord::Base
   scope :published, -> { where('date <= ?', Date.today) }
   scope :drafts, -> { where('date > ?', Date.today) }
   scope :in_reverse_chronological_order, -> { order('date DESC') }
-  scope :in_category, ->(category) { where(category: category) }
+  scope :in_category, ->(category) { where(category: category.name) }
 
   def draft?
     self.date > Date.today
@@ -33,6 +35,14 @@ class Post < ActiveRecord::Base
 
   def assign_slug
     self.slug = "#{self.title.parameterize}-#{SecureRandom.hex(4)}"
+  end
+
+  def category_name=(name)
+    self.category = Category.new(name)
+  end
+
+  def category_name
+    self.category.try(:name)
   end
 
   def create(post_attributes)

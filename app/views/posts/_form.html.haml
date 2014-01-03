@@ -2,8 +2,8 @@
   = form.label :date
   = form.date_field :date, class: 'form-control'
 .form-group
-  = form.label :category
-  = form.select :category, Categories.list, {}, class: 'form-control'
+  = form.label :category_name, "Category"
+  = form.select :category_name, Categories.list.map(&:name), {}, class: 'form-control'
 .form-group
   = form.label :title
   = form.text_field :title, class: 'form-control'

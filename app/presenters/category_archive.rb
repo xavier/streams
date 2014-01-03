@@ -7,7 +7,7 @@ class CategoryArchive
   end
 
   def category_name
-    @category
+    @category.name
   end
 
   def posts_by_year

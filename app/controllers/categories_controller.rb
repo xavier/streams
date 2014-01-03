@@ -5,12 +5,13 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    category = Categories.find_by_slug!(params[:id])
     respond_to do |format|
       format.html do
-        @category_archive = CategoryArchive.new(params[:id])
+        @category_archive = CategoryArchive.new(category)
       end
       format.atom do
-        @feed = FeedService.category_feed(params[:id])
+        @feed = FeedService.category_feed(category)
         render 'streams/feed'
       end
     end
