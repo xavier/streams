@@ -9,7 +9,7 @@ class Post < ActiveRecord::Base
 
   validates :date,  presence: true
 
-  serialize :category, Category::Serializer.new
+  serialize :category, Category::Serializer
 
   validates :category, presence: true, inclusion: {in: Categories.list}
 
@@ -19,7 +19,7 @@ class Post < ActiveRecord::Base
   scope :published, -> { where('date <= ?', Date.today) }
   scope :drafts, -> { where('date > ?', Date.today) }
   scope :in_reverse_chronological_order, -> { order('date DESC') }
-  scope :in_category, ->(category) { where(category: category.name) }
+  scope :in_category, ->(category) { where(category: category) }
 
   def draft?
     self.date > Date.today

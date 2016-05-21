@@ -2,11 +2,11 @@ class Category
 
   class Serializer
 
-    def dump(category)
+    def self.dump(category)
       category.name
     end
 
-    def load(name)
+    def self.load(name)
       Category.new(name)
     end
 

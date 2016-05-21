@@ -9,7 +9,7 @@ describe "Atom feeds" do
 
     let(:feed) do
       visit streams_path(format: 'atom')
-      Feedzirra::Feed.parse(page.body)
+      Feedjira::Feed.parse(page.body)
     end
 
     it "has entries" do
@@ -24,7 +24,7 @@ describe "Atom feeds" do
 
     let(:feed) do
       visit stream_path(stream, format: 'atom')
-      Feedzirra::Feed.parse(page.body)
+      Feedjira::Feed.parse(page.body)
     end
 
     it "has the stream name in the title" do
@@ -43,7 +43,7 @@ describe "Atom feeds" do
 
     let(:feed) do
       visit category_path(category, format: 'atom')
-      Feedzirra::Feed.parse(page.body)
+      Feedjira::Feed.parse(page.body)
     end
 
     it "has the stream name in the title" do
