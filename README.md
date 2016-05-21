@@ -34,4 +34,4 @@ Look up in `config/secrets.yml` for an exhaustive list of the required variables
 
 Released under [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright © 2013 Xavier Defrang
+Copyright © 2013-16 Xavier Defrang
